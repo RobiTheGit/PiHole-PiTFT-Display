@@ -43,7 +43,7 @@ IP: <whatever your ip for the pi is>
 <HostName>
 Ads Blocked: <ammount of ads blocked>
 Clients: <ammount of clients recived>
-CPU: <CPU Usage>
+CPU Load: <CPU Usage>
 Mem: <Memory Usage>
 Disk: <Disk Usage>
 DNS Queries: <Ammount of DNS Queries>
