@@ -20,7 +20,7 @@ yellow = ccodes[4]
 green = ccodes[5]
 red = ccodes[6]
 
-API_TOKEN = "INSERT_API_KEY_HERE"
+API_TOKEN = "YOUR_API_KEY_HERE"
 api_url = "http://localhost/admin/api.php?summaryRaw&auth="+API_TOKEN
 os.system('tput civis')
 
@@ -33,7 +33,7 @@ try:
     while True:
         os.system('tput civis')
         cmd = "hostname -I | cut -d\' \' -f1"
-        IP = "IP: "+subprocess.check_output(cmd, shell=True).decode("utf-8")
+        IP =  subprocess.check_output(cmd, shell=True).decode("utf-8")
         cmd = "hostname | tr -d \'\\n\'"
         HOST = subprocess.check_output(cmd, shell=True).decode("utf-8")
         cmd = "top -bn1 | grep load | awk '{printf \"CPU Load: %.2f\", $(NF-2)}'"
@@ -56,13 +56,12 @@ try:
             continue
         os.system('clear')
         if not buttonA.value:  # just button A pressed
-            print(f'{yellow}{IP}')
-            print(f'{HOST}')
+            print(f'{yellow}{HOST}@{IP}')
             print(f'{green}Ads Blocked: {ADSBLOCKED}')
             print(f'Clients: {CLIENTS}')
-            print(f'{cyan}CPU:  {CPU}')
-            print(f'Mem:  {MemUsage}')
-            print(f'{magenta}Disk:  {Disk}')
+            print(f'{cyan}{CPU}')
+            print(f'{MemUsage}')
+            print(f'{magenta}{Disk}')
             print(f'DNS Queries: {DNSQUERIES}{white}')
         elif not buttonB.value:
             print(f'{yellow}Where is Loki?\nWhere is Levi?\n{green}Loki Doki and Levy Devy!\n{cyan}Oh no, the quick brown fox jumped over them while they were being lazy.{white}')
